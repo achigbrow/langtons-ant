@@ -1,13 +1,12 @@
 package edu.cnm.deepdive.langton;
 
+import edu.cnm.deepdive.langton.controller.MainController;
 import java.util.ResourceBundle;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import edu.cnm.deepdive.langton.controller.MainController;
-
 
 public class Main extends Application {
 
@@ -31,9 +30,10 @@ public class Main extends Application {
     controller = fxmlLoader.getController();
     Scene scene = new Scene(root);
     stage.setTitle(bundle.getString(WINDOW_TITLE_KEY));
-    //TODO Set other elements of the scene from our resources.
+    // TODO Set other elements of the scene from our resources.
     stage.setResizable(false);
     stage.setScene(scene);
+    stage.sizeToScene();
     stage.show();
   }
 
@@ -42,4 +42,5 @@ public class Main extends Application {
     controller.stop();
     super.stop();
   }
+
 }
